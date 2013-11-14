@@ -16,10 +16,10 @@ servlet-api.jar
 Runtime requirements:
 ```
 stanford-corenlp-3.2.0.jar
-stanford-corenlp-3.2.0-models.jar
+stanford-corenlp-3.2.0-models.jar  // removed for being too large
 joda-time.jar
 jollyday.jar
-servlet-api.jar # should be in your servlet container
+servlet-api.jar  // should be in your servlet container
 ```
 
 You may then export the servlet as a .war file and deploy in a Tomcat environment.
