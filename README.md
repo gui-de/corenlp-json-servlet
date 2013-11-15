@@ -43,7 +43,7 @@ yum install tomcat6 java-devel git wget -y
 
 # setup ports
 # if you want to change the port (default 8080), edit /etc/tomcat6/server.xml
-# update your security group to allow access to 8080
+# update your security group to allow access to 8080 (or whatever port you set)
 
 exit
 
