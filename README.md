@@ -123,8 +123,8 @@ wget "http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip"
 unzip stanford-corenlp-full-2013-11-12.zip
 cp stanford-corenlp-full-2013-11-12/stanford-corenlp-3.3.0-models.jar /usr/share/tomcat6/lib/
 
-# add to top of /usr/sbin/tomcat6 (below "#!/bin/bash")
-export CATALINA_OPTS="-Xms3g -Xms3g -DWNSEARCHDIR=/home/ec2-user/src/corenlp-json-servlet/lib/dict/"
+# add to /etc/sysconfig/tomcat6/
+CATALINA_OPTS="-Xms3g -Xms3g -DWNSEARCHDIR=/usr/share/tomcat6/webapps/nlp/WEB-INF/lib/dict/"
 
 service tomcat6 restart
 ```
