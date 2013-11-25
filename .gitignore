@@ -1,2 +1,3 @@
 *.class
-CoreNLP.war
+nlp.war
+.DS_Store
