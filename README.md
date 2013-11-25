@@ -38,7 +38,6 @@ opennlp-tools-1.5.3.jar
 
 // JEE
 servlet-api.jar
-
 ```
 
 Runtime requirements:
@@ -62,7 +61,7 @@ Export the servlet as a ```.war``` file and deploy in a Tomcat environment.
 
 The servlet accepts only one parameter, _text_:
 ```
-// Default to CoreNLP
+// Defaults to CoreNLP
 curl -X POST -d "text=Hello world." http://localhost:8080/nlp/
 
 // CoreNLP
@@ -73,7 +72,7 @@ curl -X POST -d "text=Hello world." http://localhost:8080/nlp/OpenNLP
 
 ```
 
-We have tried to reproduce the command-line output of each tool so the servlet can serve as a drop-in replacement in existing code (e.g. [stanford-corenlp-python](https://github.com/dasmith/stanford-corenlp-python), but you're welcome to use the included (JSON.simple)[https://code.google.com/p/json-simple/] library to output your own JSON.
+We have tried to reproduce the command-line output of each tool so the servlet can serve as a drop-in replacement in existing code (e.g. [stanford-corenlp-python](https://github.com/dasmith/stanford-corenlp-python)), but you're welcome to use the included [JSON.simple](https://code.google.com/p/json-simple/) library to output your own JSON.
 
 AWS EC2 Amazon AMI setup:
 
