@@ -21,10 +21,10 @@ bin/WEB-INF/lib/coref/*
 
 Bundles [WordNet 3.1 DATABASE FILES](http://www.princeton.edu/wordnet/download/current-version/)
 ```
-lib/dict/*
+bin/WEB-INF/lib/dict/*
 ```
 
-Obey the licenses for bundled libraries.
+Note the licenses for bundled libraries.
 
 
 Compile-time requirements:
@@ -57,7 +57,7 @@ opennlp-tools-1.5.3.jar
 servlet-api.jar  // should already be in your servlet container
 ```
 
-Export the servlet as a ```.war``` file and deploy in a Tomcat environment.
+Export the servlet as a ```.war``` file and deploy in a servlet container.
 
 The servlet accepts only one parameter, _text_:
 ```
