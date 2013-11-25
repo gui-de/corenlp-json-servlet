@@ -38,7 +38,6 @@ public class CoreNLP extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
 		String text = request.getParameter("text");
 
 		if (text == null) {
@@ -55,8 +54,8 @@ public class CoreNLP extends HttpServlet {
 		// run all Annotators on this text
 		nlp.annotate(document);
 
-		PrintWriter pw = new PrintWriter(out);
-		nlp.prettyPrint(document, pw);
+		PrintWriter out = response.getWriter();
+		nlp.prettyPrint(document, out);
 		return;
 	}
 }
