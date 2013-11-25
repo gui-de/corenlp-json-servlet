@@ -1,7 +1,7 @@
 corenlp-json-servlet
 ====================
 
-A simple servlet for running Standford's CoreNLP and Apache's OpenNLP.
+A servlet for running Standford's CoreNLP and Apache's OpenNLP. This should be faster and more stable than [launching a subprocess](https://github.com/dasmith/stanford-corenlp-python) because it keeps the models in memory.
 
 Bundles [Stanford CoreNLP 2013-11-12](http://nlp.stanford.edu/software/corenlp.shtml) 
 ``` 
@@ -123,7 +123,7 @@ wget "http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip"
 unzip stanford-corenlp-full-2013-11-12.zip
 cp stanford-corenlp-full-2013-11-12/stanford-corenlp-3.3.0-models.jar /usr/share/tomcat6/lib/
 
-# add to /etc/sysconfig/tomcat6/
+# add to /etc/sysconfig/tomcat6
 CATALINA_OPTS="-Xms3g -Xms3g -DWNSEARCHDIR=/usr/share/tomcat6/webapps/nlp/WEB-INF/lib/dict/"
 
 service tomcat6 restart
