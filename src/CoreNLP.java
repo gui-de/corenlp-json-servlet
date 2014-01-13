@@ -19,7 +19,7 @@ public class CoreNLP extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static ThreadLocal<StanfordCoreNLP> nlp =
         new ThreadLocal<StanfordCoreNLP>(){
-        @override protected StanfordCoreNLP initialValue(){
+        @Override protected StanfordCoreNLP initialValue(){
             Properties props = new Properties();
             props.put("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
             return new StanfordCoreNLP(props);
