@@ -59,7 +59,7 @@ public class CoreNLP extends HttpServlet {
 
 		// create an empty Annotation just with the given text
 		Annotation document = new Annotation(text);
-        StanfordCoreNLP nlp = this.nlp.get()
+        StanfordCoreNLP nlp = this.nlp.get();
 		// run all Annotators on this text
 		nlp.annotate(document);
 
