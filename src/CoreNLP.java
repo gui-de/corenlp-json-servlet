@@ -10,12 +10,21 @@ import javax.servlet.http.HttpServletResponse;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
+import java.lang.ThreadLocal;
+
 /**
  * Servlet implementation class CoreNLP
  */
 public class CoreNLP extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private StanfordCoreNLP nlp = null;
+	private static StanfordCoreNLP nlp =
+        new ThreadLocal<StanfordCoreNLP>(){
+        @override protected StanfordCoreNLP initialValue(){
+            Properties props = new Properties();
+            props.put("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
+            return new StanfordCoreNLP(props);
+        }
+    };
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -24,12 +33,12 @@ public class CoreNLP extends HttpServlet {
 		super();
 
 		// initialize the parser with all properties
-		Properties props = new Properties();
-		props.put("annotators",
+		//Properties props = new Properties();
+		//props.put("annotators",
 		// "tokenize, cleanxml, ssplit, pos, lemma, ner, regexner, truecase, parse, dcoref");
 		// default annotators for stanford-corenlp-python
-				"tokenize, ssplit, pos, lemma, ner, parse, dcoref");
-		this.nlp = new StanfordCoreNLP(props);
+		//		"tokenize, ssplit, pos, lemma, ner, parse, dcoref");
+		//this.nlp = new StanfordCoreNLP(props);
 	}
 
 	/**
