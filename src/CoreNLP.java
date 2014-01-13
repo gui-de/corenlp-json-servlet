@@ -17,7 +17,7 @@ import java.lang.ThreadLocal;
  */
 public class CoreNLP extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static StanfordCoreNLP nlp =
+	private static ThreadLocal<StanfordCoreNLP> nlp =
         new ThreadLocal<StanfordCoreNLP>(){
         @override protected StanfordCoreNLP initialValue(){
             Properties props = new Properties();
@@ -59,7 +59,7 @@ public class CoreNLP extends HttpServlet {
 
 		// create an empty Annotation just with the given text
 		Annotation document = new Annotation(text);
-
+        StanfordCoreNLP nlp = this.nlp.get()
 		// run all Annotators on this text
 		nlp.annotate(document);
 
